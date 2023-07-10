@@ -1,0 +1,764 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+ 
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+ 
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+ 
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: ;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --ring: 240 5% 64.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+ 
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: ;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+ 
+    --ring: 240 3.7% 15.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+.navbar {
+  border-radius: 10px 10px 0 0; /* Specify different border radii for top-left and top-right corners */
+  /* Additional styling properties for the navbar */
+  /* ... */
+}
+.glowing-link {
+      position: relative;
+      text-decoration: none;
+      color: #000; /* Set your desired text color */
+    }
+
+    /* Add the underline */
+    .glowing-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 2px;
+      background-color: black; /* Set your desired underline color */
+      transition: width 0.5s;
+    }
+
+    /* Increase the underline width on hover */
+    .glowing-link:hover::after {
+      width: 100%;
+    }
+    .mynav{
+    background-color:rgb(247,243,240);
+    }
+    @media screen and (max-width:840px){
+      .hamburger-iconnav{
+        margin-top: 14px;
+      }
+      .startnav{
+      display:none;
+    }
+  }
+  @media screen and (min-width:840px){
+    .hamburger-iconnav{
+      display: none;
+    }
+    .startnav{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  
+  .navbar-hamburger {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-menu {
+    display: flex;
+  }
+  
+  .navbar-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-menu ul li {
+    margin-left: 20px;
+  }
+  
+  .navbar-menu ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-hamburger {
+      display: block;
+    }
+    
+    
+  
+    .navbar-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+  
+    .navbar-menu ul {
+      flex-direction: column;
+    }
+  
+    .navbar-menu ul li {
+      margin: 10px 0;
+    }
+  
+    .navbar-toggle:checked + .navbar-menu {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .hamburger:before,
+    .hamburger:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      transition: transform 0.3s ease;
+    }
+  
+    .hamburger:before {
+      top: -8px;
+    }
+  
+    .hamburger:after {
+      top: 8px;
+    }
+  
+    .navbar-toggle:checked + .navbar-hamburger .hamburger:before {
+      transform: translateY(8px) rotate(45deg);
+    }
+  
+    .navbar-toggle:checked + .navbar-hamburger .hamburger:after {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+  @media screen and (max-width:1000px){
+    .search{
+      display: none;
+    }
+  }
+  @media screen and (min-width:1000px){
+    .search{
+      display: flex;
+    }
+  }
+  @media screen and (max-width:500px){
+    .img-div{
+      justify-content: flex-end;
+    }
+  }
+@media screen and (min-width:768px) and (max-width:2000px){
+  .newnav{
+    display: none;
+  }
+}
+@media screen and (min-width:700px) and (max-width:940px){
+  .fashion-img{
+    display: none;
+  }
+  .mynav{
+    height: 400px;
+  }
+}
+@media screen and (max-width:700px){
+  .fashion-img{
+    display: none;
+  }
+  .intext{
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+  }
+  .offer{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (max-width:516px){
+  .intext{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size:2rem;
+  }
+  .offer{
+    font-size: medium;
+  }
+  .mynav{
+    height:300px;
+  }
+}
+@media screen and (max-width:400px){
+  .offer{
+    margin-right: 20px;
+    font-size: small;
+  }
+  .intext{
+    font-size: xx-large;
+  }
+}
+/* @media screen and (min-width:400px) and (max-width:516px){
+  
+  .intext{
+    font-size: xx-large;
+  }
+} */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-radio {
+  display: none;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.carousel-navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.carousel-nav {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #888;
+  border-radius: 50%;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-radio:checked ~ .carousel-slides {
+  transform: translateX(-100%);
+}
+
+.carousel-radio:nth-child(2):checked ~ .carousel-navigation .carousel-nav:nth-child(1),
+.carousel-radio:nth-child(3):checked ~ .carousel-navigation .carousel-nav:nth-child(2),
+.carousel-radio:nth-child(1):checked ~ .carousel-navigation .carousel-nav:nth-child(3) {
+  background-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .caption {
+    font-size: 32px;
+  }
+}
+
+
+@media screen and (max-width:640px){
+  .complain{
+    height: 60%;
+  }
+  .fonthead{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+@media screen and (min-width:640px){
+  .complain{
+    height: 80%;
+  }
+}
+@media screen and (min-width:640px) and (max-width:768px){
+  .complain{
+    height: 60%;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* provides background color to body */
+
+
+/* ----- container stylings: 
+-> centers the whole content of the page
+-> defines width and height for container ----- */
+
+
+/* ----- end of container stylings ----- */
+
+/* provides padding to main heading */
+.main-heading {
+  padding: 2rem 0 2rem 0;
+}
+
+.content {
+  position: relative;
+}
+
+/* ----- carousel content stylings ----- */
+/* places the carousel content on center of the carousel */
+.carousel-content {
+  position: absolute;
+  /*to center the content horizontally and vertically*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  z-index: 50;
+}
+.carousel-heading {
+  font-size: 3rem;
+  color: #308d46;
+  margin-bottom: 1rem;
+}
+/*----- end of carousel content stylings ----- */
+
+/* ----- slideshow stylings ----- */
+.slideshow {
+  height: 100%;
+  overflow: hidden; /* to hide slides in x-direction */
+  position: relative;
+}
+/* wrapper which wraps all the slideshow images stylings */
+.slideshow-wrapper {
+  display: flex;
+  /* We give it width as 400% because we are making a 
+     4 image carousel. If you want to make for example, 
+     5 images carousel, then give width as 500%. */
+  width: 400%;
+  height: 100%;
+  position: relative;
+  /* you can change the animation settings from below */
+  animation: slideshow 20s infinite;
+}
+/* define width and height for images*/
+.slide {
+  width: 100%;
+  height: 100%;
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+/* @keyframes are used to provide animations
+ We make these settings for 4 image carousel.
+ Make modification according to your needs. */
+@keyframes slideshow {
+  0%  { left: 0; }
+  10% { left: 0; }
+  15% { left: -100%; }
+  25% { left: -100%; }
+  30% { left: -200%; }
+  40% { left: -200%; }
+  45% { left: -300%; }
+  55% { left: -300%; }
+  60% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -100%; }
+  85% { left: -100%; }
+  90% { left: 0%; }
+}
+/* ----- end of slideshow stylings ----- */
+
+/* ----- carousel control buttons stylings ----- */
+.slide-btn {
+  background-color: #bbb;
+  border-radius: 50%;
+  border: .2rem solid #d38800;
+  width: 1.2rem;
+  height: 1.2rem;
+  outline: none;
+  cursor: pointer;
+  /* stylings for positioning the buttons at
+     the bottom of the carousel */
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 70;
+}
+/* As we provide position as absolute, 
+the buttons places one over the other. 
+So, we have to place them individually
+at their correct positions. */
+.slide-btn-1 {
+  left: 45%;
+}
+.slide-btn-2 {
+  left: 50%;
+}
+.slide-btn-3 {
+  left: 55%;
+}
+.slide-btn-4 {
+  left: 60%;
+}
+/* When we focus on the particular button, 
+the animation stops to that particular image 
+to which the button is associated. */
+.slide-btn-1:focus~.slideshow-wrapper {
+  animation: none;
+  left: 0;
+}
+.slide-btn-2:focus~.slideshow-wrapper {
+  animation: none;
+  left: -100%;
+}
+.slide-btn-3:focus~.slideshow-wrapper {
+  animation: none;
+  left: -200%;
+}
+.slide-btn-4:focus~.slideshow-wrapper {
+  animation: none;
+  left: -300%;
+}
+/* when we focus on the button, the background color changes */
+.slide-btn:focus {
+  background-color: #308d46;
+}
+
+/* body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3f2fd;
+} */
+
+
+.sep{
+  margin-bottom: 20px;
+}
+  .container {
+    display: flex;
+    gap: 12px;
+    max-width: 280px;
+    width: 100%;
+    margin-bottom: 80px;
+    background: white;
+    border-radius: 12px;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-padding: 15px;
+    /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); */
+  }
+
+.container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  background: #fff;
+  scroll-snap-align: start;
+  /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); */
+}
+.card .image {
+  height: 150px;
+  width: 150px;
+  padding: 4px;
+  background: #4070f4;
+  border-radius: 50%;
+}
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.card h2 {
+  margin-top: 25px;
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+}
+.card p {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.carousel{
+  padding:3rem;
+  width: 100vw;
+}
+.box {
+  background-color: lightgreen;
+  height: 300px;
+}
+.box h3{
+  text-align: center;
+}
+.slick-slide div{
+  margin: 0 5px;
+  max-width: 400px;
+}
+.slick-dots li button:before{
+  color:#fff;
+  font-size: 1rem;
+}
+/* .styling{
+  animation-delay: 0.1s;
+}
+.sidebar-screen{
+
+} */
+.full-nav {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5); */
+  height: 100vh;
+  width: 100%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.logo {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 1.2rem;
+  color: #0e2431;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
