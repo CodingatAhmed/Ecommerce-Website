@@ -24,7 +24,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "photoshop-kopona.com",
+        hostname: "static.vecteezy.com",
         port: "",
         // pathname: '/account123/**',
       },

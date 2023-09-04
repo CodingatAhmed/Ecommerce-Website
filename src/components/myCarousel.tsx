@@ -5,10 +5,10 @@ import previous from "../../public/icon-previous.svg"
 import { Button } from "./ui/button"
 
 const thumbnails = [
-  "https://www.hangoverhops.com/frontEnd/assets/images/about-six.png",
-  "https://www.hangoverhops.com/frontEnd/assets/images/about-six.png",
-  "https://www.hangoverhops.com/frontEnd/assets/images/about-six.png",
-  "https://www.hangoverhops.com/frontEnd/assets/images/about-six.png"
+  "https://static.vecteezy.com/system/resources/previews/012/628/220/original/plain-black-t-shirt-on-transparent-background-free-png.png",
+  "https://static.vecteezy.com/system/resources/previews/012/628/220/original/plain-black-t-shirt-on-transparent-background-free-png.png",
+  "https://static.vecteezy.com/system/resources/previews/012/628/220/original/plain-black-t-shirt-on-transparent-background-free-png.png",
+  "https://static.vecteezy.com/system/resources/previews/012/628/220/original/plain-black-t-shirt-on-transparent-background-free-png.png"
 ]
 
 export function Carousel({
