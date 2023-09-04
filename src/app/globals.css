@@ -290,10 +290,7 @@
   }
 } */
 .carousel {
-  position: relative;
-  max-width: 100%;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .carousel-radio {
@@ -312,7 +309,6 @@
 
 .slide img {
   width: 100%;
-  height: auto;
 }
 
 .caption {
@@ -594,8 +590,7 @@ to which the button is associated. */
   text-align: center;
 }
 .carousel{
-  padding:3rem;
-  width: 100vw;
+  padding:4rem;
 }
 .box {
   background-color: lightgreen;
@@ -605,7 +600,8 @@ to which the button is associated. */
   text-align: center;
 }
 .slick-slide div{
-  margin: 0 5px;
+  
+  margin: 0px 16px 2px 3px;
   max-width: 400px;
 }
 .slick-dots li button:before{
@@ -761,4 +757,13 @@ body {
 
 .nav-container input[type="checkbox"]:checked ~ .logo{
   display: none;
+}
+#sections {
+  margin-left: clamp(1rem, 3.5vw, 5rem);
+}
+@media screen and (max-width:768px){
+
+  .to-hide{
+    display: none;
+  }
 }

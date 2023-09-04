@@ -89,4 +89,9 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+
+  // plugins: [require("daisyui")],
+  // plugins: [require("flowbite/plugin")],
+  // content: ["./node_modules/flowbite/**/*.js"],
+  // content: ["./pages/**/*.{ts,tsx}", "./public/**/*.html"],
 }

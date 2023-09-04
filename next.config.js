@@ -1,18 +1,34 @@
 /** @type {import('next').NextConfig} */
 /**  @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
 const nextConfig = {
-    plugins: [require("daisyui")],
-    plugins: [
-        require('flowbite/plugin')
+  images: {
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.hangoverhops.com",
+        port: "",
+        // pathname: '/account123/**',
+      },
+      {
+        protocol: "https",
+        hostname: "ae01.alicdn.com",
+        port: "",
+        // pathname: '/account123/**',
+      },
+      {
+        protocol: "https",
+        hostname: "www.2tall.com",
+        port: "",
+        // pathname: '/account123/**',
+      },
+      {
+        protocol: "https",
+        hostname: "photoshop-kopona.com",
+        port: "",
+        // pathname: '/account123/**',
+      },
     ],
-    content: [
-        "./node_modules/flowbite/**/*.js"
-    ],
-    content: [
-        "./pages/**/*.{ts,tsx}",
-        "./public/**/*.html",
-      ],
-      plugins: [],
-      theme: {},
-    }
-module.exports = nextConfig
+  },
+};
+module.exports = nextConfig;

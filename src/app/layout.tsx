@@ -1,11 +1,12 @@
 "use client"
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Navbar from './components/Navbar'
-import NewsLetter from './components/newsletter'
-import Footer from './components/footer'
+import Navbar from '@/components/Navbar'
+import NewsLetter from '@/components/newsletter'
+import Footer from '@/components/footer'
+import Providers from './providers'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -19,11 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
+        <Providers>
       <Navbar/>
       {children}
       <NewsLetter/>
       <Footer/>
+      </Providers>
       </body>
     </html>
   )
